@@ -1,4 +1,4 @@
-# AskAway
+# Ask Away
 
 Random Answer App
 
