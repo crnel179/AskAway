@@ -6,3 +6,4 @@ Random Answer App
 * Java Array
 * Random
 * Spannable String
+* Guidelines
