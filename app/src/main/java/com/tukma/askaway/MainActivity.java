@@ -21,6 +21,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TextView textView = findViewById(R.id.tv_main);
+
+        String text = "Ask Away!";
+
+        SpannableStringBuilder ssb = new SpannableStringBuilder(text);
+
+        ForegroundColorSpan fcsWhite = new ForegroundColorSpan(Color.WHITE);
+        ForegroundColorSpan fcsWhite2 = new ForegroundColorSpan(Color.WHITE);
+
+        ssb.setSpan(fcsWhite, 0, 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ssb.setSpan(fcsWhite2, 8, 9, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        textView.setText(ssb);
+
         Button askButton = findViewById(R.id.btn_ask);
 
         final ImageView imgAnswer = findViewById(R.id.image_answer);
@@ -36,20 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 int answer = randomAnswer.nextInt(3);
 
                 imgAnswer.setImageResource(answerArray[answer]);
-
-
-                TextView tvMain = findViewById(R.id.tv_main);
-
-                String text = "Ask Away!";
-
-                SpannableStringBuilder ss = new SpannableStringBuilder(text);
-
-                ForegroundColorSpan fcsWhite = new ForegroundColorSpan(Color.WHITE);
-
-                ss.setSpan(fcsWhite, 1, 3, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-                ss.setSpan(fcsWhite, 9, 9, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-
-                tvMain.setText(ss);
 
             }
         });
